@@ -14,7 +14,7 @@ const int buzzer = 7;
 
 // Definições da faixa NeoPixel
 const int neoPixelPin = 6;
-const int numPixels = 8;
+const int numPixels = 10;
 Adafruit_NeoPixel pixels(numPixels, neoPixelPin, NEO_GRB + NEO_KHZ800);
 
 // Variáveis para controle de piscada
@@ -87,18 +87,18 @@ void loop() {
   pixels.clear();
 
   // Lógica de nível e piscada
-  if (distancia > 266) {
+  if (distancia > 350) {
     digitalWrite(ledVerde, HIGH); // Tudo ok
     for (int i = 0; i < numPixels; i++) {
       pixels.setPixelColor(i, pixels.Color(0, 255, 0)); // Verde
     }
     piscadaEstado = 0; // Sem piscada
   }
-  else if (distancia > 220 && distancia <= 265) {
+  else if (distancia > 303 && distancia <= 349) {
     digitalWrite(ledAmarelo, HIGH); // Atenção
     piscadaEstado = 1; // Piscada lenta
   }
-  else if (distancia < 220) {
+  else if (distancia < 303) {
     digitalWrite(ledVermelho, HIGH); // Risco
     playBeeps(); // Toca apitos rápidos
     piscadaEstado = 2; // Piscada rápida
@@ -126,7 +126,7 @@ void loop() {
       pixels.show();
     }
   } else {
-    if (distancia > 266) {
+    if (distancia > 350) {
       for (int i = 0; i < numPixels; i++) {
         pixels.setPixelColor(i, pixels.Color(0, 255, 0)); // Verde
       }
