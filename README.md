@@ -10,12 +10,48 @@ Este dispositivo, implantado em postes, analisa a distância entre o nível da �
 - Arduíno UNO R3;
 - ProtoBoard;
 - Buzzer;
-- Led's;
+- LEDs;
 - Resistores;
-- Faixa de NeoPixel 8;
-- Sensor de distância ultrssônico;
+- Faixa de NeoPixel (8LEDs);
+- Sensor de distância ultrssônico(HC-SR04);
 - Jumpers
-  
+  # Biblioteca usada:
+  - #include <Adafruit_NeoPixel.h>
+  # Como montar e executar o projeto:
+  #  Montar o circuito:
+  **Alimentação**
+  Conecte o pino 5V do Arduino à linha vermelha da protoboard (positivo).
+  Conecte o pino GND do Arduino à linha azul da protoboard (negativo).
+  **LEDs (Verde, Amarelo e Vermelho)**
+  **LED Verde:**
+  Anodo (perna longa) → resistor → pino Digital 2 do Arduino.
+  Cátodo (perna curta) → linha azul da protoboard (negativo/GND).
+  **LED Amarelo:**
+  Anodo → resistor → pino Digital 3 do Arduino.
+  Cátodo → linha azul da protoboard (negativo/GND).
+  **LED Vermelho:**
+  Anodo → resistor → pino Digital 4 do Arduino.
+  Cátodo → linha azul da protoboard (negativo/GND).
+  **Todos os LEDs compartilham o mesmo GND pela trilha negativa da protoboard.**
+  # Buzzer
+  Pino positivo (longo) → pino 7 do Arduino.
+  Pino negativo → GND.
+  **Sensor Ultrassônico HC-SR04**
+  VCC → linha vermelha da protoboard (positivo/5V do Arduino).
+  GND → GND.
+  Trig → pino 9 do Arduino.
+  Echo → pino 10 do Arduino.
+  **Faixa de LED NeoPixel**
+  VCC → linha vermelha da protoboard (positivo/5V do Arduino).
+  GND → GND.
+  DIN (entrada de dados) → pino Digital 6 do Arduino.
+  # Configure a IDE do Arduino:
+  Instale as bibliotecas necessárias.
+  Selecione a a placa e a porta corretas.
+  Carregue o código e acompanhe o funcionamento:
 
+Veja os dados no LCD.
+Se a temperatura ultrapassar 16°C ou a umidade sair da faixa 60–80% <!MUDAR! , um LED ou o buzzer será ativado.
+A luminosidade será lida continuamente e suavizada com médias calculadas a cada 10 segundos.
 
 
