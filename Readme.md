@@ -65,7 +65,7 @@ Este dispositivo, implantado em postes, analisa a distância entre o nível da �
   - Selecione a a placa e a porta corretas.
   - Carregue o código e acompanhe o funcionamento.
   
-#Lógica de funcionamento por nível de distância:
+# Lógica de funcionamento por nível de distância:
   1. Distância maior que 350cm/3.50m(Seguro):
   - Led **verde** acende;
   - Faixa de NeoPixel exibe todos os LEDs na cor **verde**(estático);
@@ -83,3 +83,5 @@ Este dispositivo, implantado em postes, analisa a distância entre o nível da �
   - A piscada dos LEDs de NeoPixels varia de acordo com a criticidade da situação(estavel para seguro, piscadas lentas para atenção e rápidas para perigo);
   - O buzzer apenas toca em condições de perigo, com bipes curtos e com pequenas pausas, simulando uma sirene;
 
+# Link do Simulador no Tinkercad:
+https://www.tinkercad.com/things/49fEzRdCB1Y-frantic-robo
